@@ -1,0 +1,11 @@
+# Ignore bundler config.
+backend/.bundle
+
+# Ignore all logfiles and tempfiles.
+backend/log/*
+backend/tmp/*
+!/log/.keep
+!/tmp/.keep
+
+# Ignore Byebug command history file.
+backend/.byebug_history
