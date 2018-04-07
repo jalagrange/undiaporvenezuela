@@ -1,26 +1,55 @@
 export default function() {
+  this.namespace = '/api';
 
-  // These comments are here to help you get started. Feel free to delete them.
+  let people = [{
+    type: 'people',
+    id: 'daniel',
+    attributes: {
+      name: 'Daniel Sabal',
+      category: 'Creativo',
+      age: 30,
+      profileimage: 'https://upload.wikimedia.org/wikipedia/commons/c/cb/Crane_estate_(5).jpg',
+      description: 'This grand old mansion sits on over 100 acres of rolling hills and dense redwood forests.'
+    }
+  }, {
+    type: 'people',
+    id: 'abraham',
+    attributes: {
+      name: 'Abraham Aguero',
+      category: 'Creativo',
+      age: 30,
+      profileimage: 'https://upload.wikimedia.org/wikipedia/commons/c/cb/Crane_estate_(5).jpg',
+      description: 'This grand old mansion sits on over 100 acres of rolling hills and dense redwood forests.'
+    }
+  },{
+    type: 'people',
+    id: 'patricia',
+    attributes: {
+      name: 'Patricia Dominguez',
+      category: 'Creativo',
+      age: 30,
+      profileimage: 'https://upload.wikimedia.org/wikipedia/commons/c/cb/Crane_estate_(5).jpg',
+      description: 'This grand old mansion sits on over 100 acres of rolling hills and dense redwood forests.'
+    }
+  }, {
+    type: 'people',
+    id: 'valerie',
+    attributes: {
+      name: 'Valerie Gomes',
+      category: 'Creativo',
+      age: 30,
+      profileimage: 'https://upload.wikimedia.org/wikipedia/commons/c/cb/Crane_estate_(5).jpg',
+      description: 'This grand old mansion sits on over 100 acres of rolling hills and dense redwood forests.'
+    }
+  }];
 
-  /*
-    Config (with defaults).
+  this.get('/people', function() {
+    return { data: people};
+  });
 
-    Note: these only affect routes defined *after* them!
-  */
+  // Find and return the provided rental from our rental list above
+    this.get('/people/:id', function (db, request) {
+      return { data: people.find((person) => request.params.id === person.id) };
+    });
 
-  // this.urlPrefix = '';    // make this `http://localhost:8080`, for example, if your API is on a different server
-  // this.namespace = '';    // make this `/api`, for example, if your API is namespaced
-  // this.timing = 400;      // delay for each request, automatically set to 0 during testing
-
-  /*
-    Shorthand cheatsheet:
-
-    this.get('/posts');
-    this.post('/posts');
-    this.get('/posts/:id');
-    this.put('/posts/:id'); // or this.patch
-    this.del('/posts/:id');
-
-    http://www.ember-cli-mirage.com/docs/v0.3.x/shorthands/
-  */
 }

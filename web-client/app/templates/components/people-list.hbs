@@ -2,7 +2,8 @@
 <ul>
   {{#each people as |person|}}
   <article class="listing">
-    <h3>{{person.name}}</h3>
+    <img src="{{person.profileimage}}" alt="" style="width:100px;height:100px;">
+    <h3>{{#link-to "people.show" person class=person.id}}{{person.name}}{{/link-to}}</h3>
     <div class="detail owner">
       <span>Owner:</span> {{person.name}}
     </div>
