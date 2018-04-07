@@ -1,0 +1,17 @@
+<h2>{{title}}</h2>
+<ul>
+  {{#each people as |person|}}
+  <article class="listing">
+    <h3>{{person.name}}</h3>
+    <div class="detail owner">
+      <span>Owner:</span> {{person.name}}
+    </div>
+    <div class="detail type">
+      <span>Category:</span> {{person.category}}
+    </div>
+    <div class="detail bedrooms">
+      <span>Age:</span> {{person.age}}
+    </div>
+  </article>
+  {{/each}}
+</ul>
